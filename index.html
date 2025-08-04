@@ -1,1 +1,144 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Infexjay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(5px);
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffe5;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00ffe5;
+      }
+      to {
+        text-shadow: 0 0 30px #00ffe5, 0 0 60px #00ffe5;
+      }
+    }
+
+    .hero {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 20px;
+    }
+
+    .download-btn {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      color: white;
+      background: #00ffe5;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 0 15px #00ffe5;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .download-btn:hover {
+      transform: scale(1.05);
+      background: #00bfa5;
+    }
+
+    .animated-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      animation: float 10s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-50px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      background-color: rgba(255,255,255,0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="animated-bg">
+    <div class="circle" style="width: 100px; height: 100px; top: 10%; left: 20%;"></div>
+    <div class="circle" style="width: 60px; height: 60px; top: 50%; left: 70%;"></div>
+    <div class="circle" style="width: 80px; height: 80px; top: 80%; left: 30%;"></div>
+  </div>
+
+  <header>
+    <h1>FTApp - Talent Meets Opportunity</h1>
+  </header>
+
+  <section class="hero">
+    <h2>Unleash Your Potential 💥</h2>
+    <p>Discover talents, connect with fans, and attract real opportunities. FTApp is your stage.</p>
+    <a class="download-btn" href="https://github.com/Infexjay/ftapp/archive/refs/heads/main.zip" download>📲 Download Demo</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Made With ❤ By Infexjay | Powered by Infex Studio
+  </footer>
+
+</body>
+</html>
