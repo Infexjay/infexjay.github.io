@@ -4,8 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FT App - Official Demo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary-color: #007BFF;
+      --text-color: #333;
+      --section-bg: #f8f9fa;
+      --background-color: #fff;
+      --container-width: 1140px;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -13,116 +23,103 @@
     }
 
     body {
-      font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(ellipse at center, #000 0%, #0c0c0c 100%);
-      color: #fff;
-      overflow-x: hidden;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
 
     header {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 2rem;
+      background: var(--background-color);
+      padding: 1.5rem 0;
       text-align: center;
+      border-bottom: 1px solid #eee;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
     h1 {
-      font-size: 3.5rem;
-      letter-spacing: 3px;
-      text-shadow: 0 0 10px cyan;
-      animation: glow 2s infinite alternate;
-    }
-
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 10px cyan;
-      }
-      to {
-        text-shadow: 0 0 30px cyan, 0 0 60px magenta;
-      }
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-color);
     }
 
     .hero {
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      background: url('https://i.imgur.com/WVV3zO3.jpg') center/cover no-repeat;
-      position: relative;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-    }
-
-    .hero-content {
-      position: relative;
+      padding: 6rem 0;
       text-align: center;
-      z-index: 2;
-      animation: fadeIn 2s ease-in-out;
+      background-color: var(--background-color);
     }
 
     .hero-content h2 {
-      font-size: 2rem;
+      font-size: 3rem;
+      font-weight: 700;
       margin-bottom: 1rem;
-      color: #0ff;
+    }
+
+    .hero-content p {
+      font-size: 1.125rem;
+      color: #666;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .download-btn {
-      margin-top: 2rem;
-      padding: 1rem 2.5rem;
-      font-size: 1.2rem;
+      padding: 0.8rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 500;
       color: #fff;
-      background: linear-gradient(45deg, cyan, magenta);
+      background-color: var(--primary-color);
       border: none;
-      border-radius: 30px;
+      border-radius: 5px;
       cursor: pointer;
-      box-shadow: 0 0 10px cyan;
-      transition: all 0.4s ease;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
     }
 
     .download-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 30px magenta, 0 0 20px cyan;
+      background-color: #0056b3;
     }
 
     .section {
-      padding: 5rem 2rem;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      margin: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 0 20px #0ff3;
+      padding: 4rem 0;
+    }
+
+    .section:nth-child(odd) {
+      background-color: var(--section-bg);
+    }
+
+    .section-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
     }
 
     .section h3 {
       font-size: 2rem;
-      color: #0ff;
+      font-weight: 700;
       margin-bottom: 1rem;
     }
 
     .section p {
       font-size: 1rem;
-      line-height: 1.6;
-      font-family: 'Rajdhani', sans-serif;
+      color: #555;
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
-      background: #000;
-      color: #999;
+      padding: 2rem 0;
+      background: var(--section-bg);
+      color: #777;
       font-size: 0.9rem;
-    }
-
-    @keyframes fadeIn {
-      0% {opacity: 0; transform: translateY(20px);}
-      100% {opacity: 1; transform: translateY(0);}
+      border-top: 1px solid #eee;
     }
 
     @media (max-width: 768px) {
@@ -130,44 +127,65 @@
         font-size: 2rem;
       }
       .hero-content h2 {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
       }
       .download-btn {
         font-size: 1rem;
+        padding: 0.7rem 1.8rem;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>⚡ FT App Demo</h1>
+      <div class="container">
+        <h1>⚡ FT App Demo</h1>
+      </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>The Future is Now</h2>
-      <p>Experience ultra-fast, secured transactions – powered by GFX mode!</p>
-      <button class="download-btn" onclick="location.href='https://github.com/Infexjay/ftapp/archive/refs/heads/main.zip'">⬇ Download FT App</button>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+              <h2>The Future is Now</h2>
+              <p>Experience ultra-fast, secured transactions – powered by GFX mode!</p>
+              <a href="https://github.com/Infexjay/ftapp/archive/refs/heads/main.zip" class="download-btn">⬇ Download FT App</a>
+            </div>
+        </div>
+    </section>
 
-  <section class="section">
-    <h3>🚀 Blazing Fast Performance</h3>
-    <p>FT App is built for speed, scale and security. From instant payments to lightning-fast login, every action feels like a GFX render in real life.</p>
-  </section>
+    <section class="section">
+        <div class="container">
+            <div class="section-content">
+                <h3>🚀 Blazing Fast Performance</h3>
+                <p>FT App is built for speed, scale and security. From instant payments to lightning-fast login, every action feels like a GFX render in real life.</p>
+            </div>
+        </div>
+    </section>
 
-  <section class="section">
-    <h3>🛡️ Military-Grade Security</h3>
-    <p>With advanced encryption protocols and face unlock features, your data is safer than Wakanda’s vibranium vault.</p>
-  </section>
+    <section class="section">
+        <div class="container">
+            <div class="section-content">
+                <h3>🛡️ Military-Grade Security</h3>
+                <p>With advanced encryption protocols and face unlock features, your data is safer than Wakanda’s vibranium vault.</p>
+            </div>
+        </div>
+    </section>
 
-  <section class="section">
-    <h3>💡 Designed for Gen Z</h3>
-    <p>Swipe, tap, go! The interface is bold, the features are tight, and the UX is slicker than your TikTok algorithm.</p>
-  </section>
+    <section class="section">
+        <div class="container">
+            <div class="section-content">
+                <h3>💡 Designed for Gen Z</h3>
+                <p>Swipe, tap, go! The interface is bold, the features are tight, and the UX is slicker than your TikTok algorithm.</p>
+            </div>
+        </div>
+    </section>
+  </main>
 
   <footer>
-    &copy; 2025 Infexjay Studio. All Rights Reserved.
+    <div class="container">
+        &copy; 2025 Infexjay Studio. All Rights Reserved.
+    </div>
   </footer>
 </body>
 </html>
